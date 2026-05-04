@@ -19,6 +19,8 @@ type: "about"
 ### 公开信息
 
 - **姓名 / Full name**: **Xiuqi Xu**
+- **学校 / Institution**: **Northeast Agricultural University**
+- **身份 / Status**: **Junior Undergraduate Student**
 - **学校邮箱 / School email**: [a19230279@neau.edu.cn](mailto:a19230279@neau.edu.cn)
 - **个人邮箱 / Personal email**: [cagedbird043@gmail.com](mailto:cagedbird043@gmail.com)
 - **常用昵称 / Alias**: **Mice**
