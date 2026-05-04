@@ -1,5 +1,5 @@
 - class_name: 关于页
-  subtitle: 公开资料与联系方式
+  subtitle: 记录折腾，也记录成长
 # about page data
 # See: https://github.com/theme-next/hexo-theme-next/blob/master/layout/about.njk
   avatarImg: /img/maodie-avatar.png
@@ -16,7 +16,7 @@
       - 🗣️ 分享观点与见解
 
   name: Xiuqi Xu
-  description: Mice
+  description: Mice / NEAU / IoT Engineering
   aboutsiteTips:
     tips: 探索
     title1: 在于
