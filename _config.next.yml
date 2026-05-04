@@ -53,7 +53,7 @@ sidebar:
   display: always # 侧边栏一直显示
 
 avatar:
-  url: https://github.com/cagedbird043.png
+  url: /img/maodie-avatar.png
   rounded: true
   rotated: true
 

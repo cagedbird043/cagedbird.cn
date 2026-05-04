@@ -9,7 +9,7 @@ type: "about"
 ---
 
 <div class="about-avatar">
-  <img src="https://github.com/cagedbird043.png" alt="Mice" style="width: 150px; height: 150px; border-radius: 50%; margin: 20px auto; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <img src="/img/maodie-avatar.png" alt="Mice" style="width: 150px; height: 150px; border-radius: 50%; margin: 20px auto; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>
 
 ## 你好，我是 Xiuqi Xu

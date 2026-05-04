@@ -2,7 +2,7 @@
   subtitle: 公开资料与联系方式
 # about page data
 # See: https://github.com/theme-next/hexo-theme-next/blob/master/layout/about.njk
-  avatarImg: https://github.com/cagedbird043.png
+  avatarImg: /img/maodie-avatar.png
   avatarSkills:
     left:
       - 📱 技术探索爱好者
