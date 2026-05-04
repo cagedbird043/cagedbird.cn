@@ -1,16 +1,17 @@
 ---
 title: MiceTimer 诞生记：Android 深度睡眠下的“夺命连环扣”
-date: 2026-01-02 23:00:00
 categories:
-  - 技术实践
-  - 系统工程
-  - 系统编程
+  - - 技术实践
+  - - 系统工程
+  - - 系统编程
+  - - Android
 tags:
   - Rust
   - Android
   - KernelSU
   - MiceTimer
   - 性能工程
+date: 2026-01-02 23:00:00
 ---
 
 ### 序言：索然无味的“稳定”
