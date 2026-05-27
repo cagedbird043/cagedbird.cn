@@ -14,6 +14,7 @@ cache:
 custom_file_path:
   # 开启自定义样式文件 (如果你之前有写 source/_data/styles.styl)
   style: source/_data/styles.styl
+  postBodyEnd: source/_data/giscus.njk
 
 # ---------------------------------------------------------------
 # Scheme Settings
@@ -174,12 +175,12 @@ canvas_ribbon:
 # ---------------------------------------------------------------
 comments:
   style: tabs
-  active: gitalk # 默认启用 Gitalk
-  storage: true
-  lazyload: true # 开启懒加载
+  active:
+  storage: false
+  lazyload: false
 
 gitalk:
-  enable: true
+  enable: false
   github_id: Mice-Tailor-Infra
   repo: cagedbird.cn
   client_id: Ov23liy7tMJ5tyB8eucY
