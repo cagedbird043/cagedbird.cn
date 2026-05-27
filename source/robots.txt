@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://miceworld.top/sitemap.xml
+Sitemap: https://cagedbird.cn/sitemap.xml

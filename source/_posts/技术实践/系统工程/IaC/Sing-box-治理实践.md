@@ -75,6 +75,6 @@ tags:
 ### 项目链接
 - **Sing-box 核心环境**: [GitHub - Mice-Tailor-Infra/sing-box-ksu-module](https://github.com/Mice-Tailor-Infra/sing-box-ksu-module)
 - **配置模板中心**: [GitHub - Mice-Tailor-Infra/sing-box-config-templates](https://github.com/Mice-Tailor-Infra/sing-box-config-templates)
-- **Mice-Tailor-Infra 门户**: [miceworld.top](https://miceworld.top)
+- **Mice-Tailor-Infra 门户**: [cagedbird.cn](https://cagedbird.cn)
 
 Stay hungry, stay coding.

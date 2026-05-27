@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Mice World
-subtitle: "记录点滴 探索无限"
-description: "Mice - 记录生活点滴与知识探索的博客。在这里，技术与创意交织，灵感如涌泉般涌现。追逐自由的心灵，与我一同探索无尽的可能性，愿每一个瞬间都如诗般美丽，映照出生活的光辉与智慧。"
-keywords: Mice Blog 博客 生活记录 知识探索 技术分享 计算机技巧 前端开发 数据结构与算法 编程实践 Linux技巧 安卓玩机 个人博客 学习分享 自由探索
-author: Mice
+title: CagedBird's Lab
+subtitle: "Systems, Android, networks, and useful tools"
+description: "CagedBird's Lab - 记录系统工程、Android、网络、开源工具与个人技术实践的博客。"
+keywords: CagedBird Blog 系统工程 Android Linux 网络 开源工具 技术实践 个人博客
+author: CagedBird
 language: zh-CN
 timezone: "Asia/Shanghai"
 
@@ -111,7 +111,7 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 # deploy:
 #   type: git
-#   repo: git@github.com:cagedbird043/mice-tailor-infra.github.io.git
+#   repo: git@github.com:cagedbird043/cagedbird.cn.git
 #   branch: main
 
 #envelope_comment

@@ -9,12 +9,12 @@ type: "about"
 ---
 
 <div class="about-avatar">
-  <img src="/img/maodie-avatar.png" alt="Mice" style="width: 150px; height: 150px; border-radius: 50%; margin: 20px auto; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <img src="/img/maodie-avatar.png" alt="CagedBird" style="width: 150px; height: 150px; border-radius: 50%; margin: 20px auto; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>
 
 ## 你好，我是 Xiuqi Xu
 
-平时我也会用 **Mice** 这个名字在网上活动。现在在 **Northeast Agricultural University** 读书，平时主要关注系统、编程、Android，以及一些真正能帮到自己的小工具和工作流。
+平时我会用 **CagedBird** / **Mice** 这些名字在网上活动。现在在 **Northeast Agricultural University** 读书，平时主要关注系统、编程、Android，以及一些真正能帮到自己的小工具和工作流。
 
 这个博客主要用来记录折腾过程、技术笔记，还有一些阶段性的想法。很多东西最开始只是为了把眼前的问题解决掉，后来整理整理，就慢慢变成了文章。
 
@@ -24,7 +24,7 @@ type: "about"
 - **学校 / Institution**: **Northeast Agricultural University**
 - **专业 / Major**: **Internet of Things Engineering**
 - **身份 / Status**: **Junior Undergraduate Student**
-- **常用昵称 / Alias**: **Mice**
+- **常用昵称 / Alias**: **CagedBird / Mice**
 - **关注方向 / Interests**: 系统工程、系统编程、Android、实用工具
 
 ### 联系方式
@@ -32,4 +32,9 @@ type: "about"
 - **学校邮箱 / School email**: [a19230279@neau.edu.cn](mailto:a19230279@neau.edu.cn)
 - **个人邮箱 / Personal email**: [cagedbird043@gmail.com](mailto:cagedbird043@gmail.com)
 - **GitHub**: [@cagedbird043](https://github.com/cagedbird043)
-- **博客**: [https://miceworld.top/about/](https://miceworld.top/about/)
+- **博客**: [https://cagedbird.cn/about/](https://cagedbird.cn/about/)
+
+
+### 站点迁移
+
+本站已从 `miceworld.top` 迁移到 `cagedbird.cn`。旧域名会长期保留，并通过 301 跳转到新域名。
