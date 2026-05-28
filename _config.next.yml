@@ -39,8 +39,8 @@ menu:
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
-  schedule: /schedule/ || fa fa-calendar
-  commonweal: /404/ || fa fa-heartbeat
+  # schedule: /schedule/ || fa fa-calendar      # 无日程页面，已隐藏
+  # commonweal: /404/ || fa fa-heartbeat         # 404 由 Caddy handle_errors 处理，不需要菜单
   # 注意：你的 sitemap 在旧配置里是被注释的，这里维持不变
   # sitemap: /sitemap.xml || fa fa-sitemap
 menu_settings:
