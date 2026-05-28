@@ -2,6 +2,27 @@
 
 本仓库是 cagedbird.cn 的 Hexo/NexT 博客源码。
 
+## 关键文件与配置层级
+
+NexT 主题的配置有三层，优先级从高到低：
+
+1. **`_config.next.yml`**（本仓库根目录）→ 个性化覆盖，优先级最高
+2. **`themes/next/_config.yml`** → 主题默认配置（仓库跟踪的文件）
+3. **`_config.yml`**（本仓库根目录）→ Hexo 主配置
+
+⚠️ **遇到过的问题**：想要改菜单项时，必须改 `_config.next.yml`（第 36 行 `menu:` 段），`themes/next/_config.yml` 里的设置会被它覆盖掉。之前因为不知道有这个文件，到 `themes/next/_config.yml` 里找问题绕了大半天。
+
+## 关键路径
+
+| 文件/路径 | 说明 |
+|-----------|------|
+| `_config.next.yml` | NexT 主题覆盖配置（菜单、侧栏、第三方集成都在这里） |
+| `_config.yml` | Hexo 主配置 |
+| `themes/next/` | NexT 主题（git submodule，注意 `_config.yml` 可能被覆盖） |
+| `source/_posts/` | 文章目录 |
+| `source/404.html` | 自定义 404 公益页面（宝贝回家），由 Caddy `handle_errors` 触发 |
+| `.github/workflows/deploy.yml` | CI/CD：push main → hexo generate → rsync 到 hk-edge |
+
 ## 基本规则
 
 - 修改要小，范围要准，只动和本次请求相关的文件。
