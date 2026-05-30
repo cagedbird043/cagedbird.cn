@@ -73,7 +73,7 @@ tags:
 ---
 
 ### 项目链接
-- **Sing-box 核心环境**: [GitHub - CagedBird-Lab/sing-box-ksu-module](https://github.com/CagedBird-Lab/sing-box-ksu-module)
+- **Sing-box 核心环境**: [GitHub - CagedBird-Lab/sing-box-ksu-module](https://github.com/cagedbird043/sing-box-ksu-module)
 - **配置模板中心**: [GitHub - CagedBird-Lab/sing-box-config-templates](https://github.com/CagedBird-Lab/sing-box-config-templates)
 - **CagedBird-Lab 门户**: [cagedbird.cn](https://cagedbird.cn)
 

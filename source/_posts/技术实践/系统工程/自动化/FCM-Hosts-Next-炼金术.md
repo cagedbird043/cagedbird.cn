@@ -83,7 +83,7 @@ Google 的边缘节点往往是成簇部署的（Cluster）。如果我们发现
 数据有了，调度也有了，我们如何用 **Infrastructure as Code (IaC)** 的思想，打造一套能够随时云端热更新的 **Sing-box** 运行环境？
 
 ### 项目链接
-- **FCM-Hosts-Next (数据工厂)**: [GitHub - CagedBird-Lab/fcm-hosts-next](https://github.com/CagedBird-Lab/fcm-hosts-next)
-- **FCM Hosts Optimizer (终端插件)**: [GitHub - CagedBird-Lab/fcm-hosts-ksu](https://github.com/CagedBird-Lab/fcm-hosts-ksu)
+- **FCM-Hosts-Next (数据工厂)**: [GitHub - cagedbird043/fcm-hosts-next](https://github.com/cagedbird043/fcm-hosts-next)
+- **FCM Hosts Optimizer (终端插件)**: [GitHub - cagedbird043/fcm-hosts-ksu](https://github.com/cagedbird043/fcm-hosts-ksu)
 
 Stay hungry, stay coding.

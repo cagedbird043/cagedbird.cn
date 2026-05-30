@@ -181,7 +181,7 @@ comments:
 
 gitalk:
   enable: false
-  github_id: CagedBird-Lab
+  github_id: cagedbird043
   repo: cagedbird.cn
   client_id: Ov23liy7tMJ5tyB8eucY
   client_secret: ""

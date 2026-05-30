@@ -115,7 +115,7 @@ get success!value=<device-specific-password>
 我把上述流程做成了一个小脚本：
 
 ```text
-https://github.com/CagedBird-Lab/hg5143f-superpass
+https://github.com/cagedbird043/hg5143f-superpass
 ```
 
 脚本会自动完成：
