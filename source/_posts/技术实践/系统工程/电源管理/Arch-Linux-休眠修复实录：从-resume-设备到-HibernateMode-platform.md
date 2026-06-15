@@ -284,3 +284,34 @@ nvidia-resume.service: Deactivated successfully
 这句话比任何玄学参数都重要。
 
 对于这台机器，答案最终落在了 `HibernateMode=platform`。但更通用的经验是：先判断休眠失败发生在哪个阶段，再动配置。Linux 休眠不是一个开关，而是一条链路。链路里每一段都可能坏，症状却可能都长得像“黑屏”。
+
+## 2026-06-16 更新：新系统环境下的会话冻结死锁
+
+时隔半月，在 2026 年 6 月中旬的一次系统更新后，休眠死机的问题再次复发。
+
+### 排查与新发现
+
+经排查发现，之前虽然建立了 `/etc/systemd/system/systemd-hibernate.service.d/90-freeze-user-sessions.conf`，但因为缺少 `[Service]` 字段头，导致该配置实际上由于 `Assignment outside of section` 语法错误被 Systemd 默默忽略了。
+
+而在最近的 Systemd（v255+ / v256+）版本升级中，系统休眠/挂起时默认开启了用户会话冻结（`SYSTEMD_SLEEP_FREEZE_USER_SESSIONS=true`）。
+
+在 **AMD + NVIDIA 独显 + Wayland (KWin)** 的混合桌面环境下，冻结用户会话会导致 KWin 在休眠那一瞬间被强行挂起，无法向 NVIDIA 驱动提交最终的显存保存与状态同步 Fence。由于这一同步链路被冻结，NVIDIA 驱动会在休眠前夕发生死锁，进而引发整机在准备写入镜像并断电的瞬间直接死机。
+
+### 终极补丁
+
+必须明确关闭 Systemd 对用户会话的冻结行为。在系统休眠和挂起服务中分别建立正确的 drop-in 配置：
+
+1. 对于休眠服务 `/etc/systemd/system/systemd-hibernate.service.d/90-freeze-user-sessions.conf`：
+   ```ini
+   [Service]
+   Environment="SYSTEMD_SLEEP_FREEZE_USER_SESSIONS=false"
+   ```
+
+2. 对于挂起服务 `/etc/systemd/system/systemd-suspend.service.d/90-freeze-user-sessions.conf`：
+   ```ini
+   [Service]
+   Environment="SYSTEMD_SLEEP_FREEZE_USER_SESSIONS=false"
+   ```
+
+配置完成后执行 `sudo systemctl daemon-reload`。经实测，Wayland 混合显卡环境下的休眠/挂起死机问题被彻底根治。
+
