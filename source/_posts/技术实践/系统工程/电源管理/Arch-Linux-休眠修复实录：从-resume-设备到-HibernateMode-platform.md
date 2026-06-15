@@ -228,7 +228,7 @@ resume/swap 是否配置正确
 ```ini
 # /etc/systemd/sleep.conf.d/hibernatemode.conf
 [Sleep]
-HibernateMode=platform
+HibernateMode=shutdown
 ```
 
 ```conf
@@ -314,4 +314,16 @@ nvidia-resume.service: Deactivated successfully
    ```
 
 配置完成后执行 `sudo systemctl daemon-reload`。经实测，Wayland 混合显卡环境下的休眠/挂起死机问题被彻底根治。
+
+
+#### 2026-06-16 补充：休眠不关机反而自动重启问题
+
+在关闭会话冻结后，如果执行休眠发现系统在写完镜像后并未切断电源，而是自动重新启动且没有恢复内存会话，这是由于当前内核/主板 ACPI 对 `HibernateMode=platform` 的电源状态解析有冲突（如机械革命系列 BIOS 的 ACPI 缺陷），误将关机信号判定为了重置重启。
+
+解决办法是修改 `/etc/systemd/sleep.conf.d/hibernatemode.conf`，将休眠模式改为 `shutdown`，强制内核在写完镜像后直接绕过 ACPI S4 握手切断电源：
+```ini
+[Sleep]
+HibernateMode=shutdown
+```
+经测试，修改后休眠可以完美切断电源断电，再次开机也可以完美恢复先前的内存状态。
 
