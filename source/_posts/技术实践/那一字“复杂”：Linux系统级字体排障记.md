@@ -88,6 +88,77 @@ categories:
 
 这是因为 Chrome 在匹配类似 `Georgia` 或 Claude 自带的 `Tiempos` 网页衬线字体时，如果发现本地没有（或有西文但无中文），会直接跳过西文 Fallback 链，直接向 Fontconfig 请求通用 `serif` 类的回退。我们在此处强行拦截并 prepend 思源黑体，完美实现了网页衬线字体栈下的中文全部渲染为干净、等宽的思源黑体。
 
+### 阶段五：终极对决，破案 Claude.ai 网页端的“日字硬编码”
+
+然而，故事到这里并没有彻底结束。
+
+当我们重新载入配置，再次打开 Claude.ai 页面时，大部分中文字体确实正常了，但“复制”的“复”字居然还是呈现为诡异的窄体。
+
+这不科学。我们直接在浏览器中打开 F12 开发者工具，选中该字并在右侧 **`计算样式 (Computed)`** 最底部查看 **`已渲染的字体 (Rendered Fonts)`**，抓到了最终的隐形元凶：
+**`Noto Sans CJK JP` (Japanese)**
+
+这极其诡异：我们在系统 Fontconfig 里已经把中文优先级提到了最高，为什么 Chrome 在渲染这个网页时，依然死死咬住日文字体不放？
+
+#### 破案：傲慢的 CSS 硬编码
+
+经过排查，我们终于发现了导致这桩冤案的终极真相：**根本不是浏览器的 Fallback 机制出了问题，而是 Claude.ai 网页端的前端开发人员，直接在全局 CSS 样式表里把日语字体给硬编码（Hardcode）写死了！**
+
+在 Claude 网页端的全局样式中，用于渲染对话文本的 CSS 变量 `--font-anthropic-serif` 里，赫然写着：
+`font-family: ..., "Hiragino Sans", "Yu Gothic", "Meiryo", "Noto Sans CJK JP", ...;`
+
+因为 CSS 显式指定了 `"Noto Sans CJK JP"`，浏览器便直接绕过了所有的系统默认 fallback 链，强行去请求日文字体。而日文字体为了兼顾日文排版，把“复”字设计成了不等宽的比例窄字，从而在中文上下文中制造了这起排版惨剧。
+
+#### 终极解法：油猴脚本 + 字体分流
+
+找到了病灶，解决起来就非常简单了。我们直接采用**“网页级 CSS 净化 + 系统级 Fontconfig 分流”**的双剑合璧方案：
+
+1. **网页级净化（大救星脚本）**：
+   安装开源油猴脚本 [claude-ai-cjk-font-fix](https://github.com/CatMe0w/claude-ai-cjk-font-fix)。
+   该脚本会拦截并重写 Claude.ai 网页端的 CSS，将硬编码的日文字体彻底剔除，还原成干净的西文衬线回退栈。这样一来，浏览器在遇到中文时，就会重新老老实实地走系统的 Fontconfig fallback 逻辑。
+   
+2. **系统级分流（双轨制 Fallback）**：
+   如果我们在系统里一刀切把所有日文字体封杀，会导致我们在阅读原生日语网页时也看不到原汁原味的日文字形（如“気”字等日语汉字风格发生变化）。因此，我们在用户级 `fonts.conf` 中设计了一套基于请求语言的动态分流规则：
+   
+   ```xml
+   <!-- sans-serif 针对日语网页优先走 JP 变体 -->
+   <match target="pattern">
+    <test compare="eq" name="family">
+     <string>sans-serif</string>
+    </test>
+    <test compare="contains" name="lang">
+     <string>ja</string>
+    </test>
+    <edit binding="strong" mode="prepend" name="family">
+      <string>Noto Sans CJK JP</string>
+    </edit>
+   </match>
+   
+   <!-- sans-serif 在其他网页下默认首选走 SC 变体 -->
+   <match target="pattern">
+    <test compare="eq" name="family">
+     <string>sans-serif</string>
+    </test>
+    <test compare="not_contains" name="lang">
+     <string>ja</string>
+    </test>
+    <edit binding="strong" mode="prepend" name="family">
+     <string>Noto Sans CJK SC</string>
+    </edit>
+   </match>
+   ```
+
+在这套方案的加持下：
+- **在 Claude 页面上**：日文字体被油猴脚本剔除，系统 Fallback 自动接管，最终以中国设计师专门调校的 `Noto Sans CJK SC` 渲染，中文字体全部恢复端端正正、完全等宽的方块字姿态。
+- **在日语页面上**：由于声明了 `lang="ja"`，系统依然会精准加载原汁原味的 `Noto Sans CJK JP`，假名与日语汉字字形毫发无损。
+
+#### 🔍 渲染效果对比
+
+**修复前：经典的 Windows SimSun 衬线体回退效果（字形干瘪、刺眼）：**
+![Windows SimSun 坏字体渲染效果](font-comparison-bad.webp "Windows SimSun 坏字体")
+
+**修复与网页 CSS 净化后：端正、饱满、绝对等宽的思源黑体（SC）字形效果：**
+![思源黑体好字体渲染效果](font-comparison-good.webp "思源黑体好字体")
+
 ### 结语
 
 折腾完这一遭，重启 Chrome。
