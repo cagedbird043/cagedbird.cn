@@ -15,7 +15,7 @@ permissions:
 
 concurrency:
   group: "blog-deploy"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
