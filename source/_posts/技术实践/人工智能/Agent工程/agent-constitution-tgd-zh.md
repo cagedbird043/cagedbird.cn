@@ -19,7 +19,7 @@ categories:
 
 <!-- more -->
 
-[English version](/2026/07/16/agent-constitution-tgd-en/)
+{% post_link agent-constitution-tgd-en 'English version' %}
 
 ## 人睡了以后，谁来盯着 Agent
 
