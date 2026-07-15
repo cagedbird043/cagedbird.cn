@@ -19,7 +19,7 @@ categories:
 
 <!-- more -->
 
-{% post_link agent-constitution-tgd-en 'English version' %}
+{% post_link 技术实践/人工智能/Agent工程/agent-constitution-tgd-en 'English version' %}
 
 ## 人睡了以后，谁来盯着 Agent
 

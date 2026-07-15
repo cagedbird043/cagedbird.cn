@@ -19,7 +19,7 @@ I did not invent the machinery either. Hoare logic, Design by Contract, property
 
 <!-- more -->
 
-{% post_link agent-constitution-tgd-zh '中文版' %}
+{% post_link 技术实践/人工智能/Agent工程/agent-constitution-tgd-zh '中文版' %}
 
 ## Who watches the agent after I go to sleep?
 
