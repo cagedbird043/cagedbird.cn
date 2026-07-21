@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "gzh-design": {
+      "source": "isjiamu/gzh-design-skill",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "cba0a35bcc639882029822c08d228a48b260b9ba761d8ceeeec1afc22b32b75d"
+    },
     "md2wechat": {
       "source": "geekjourneyx/md2wechat-skill",
       "sourceType": "github",
