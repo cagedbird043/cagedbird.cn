@@ -1,7 +1,7 @@
 ---
 title: 便携小空调 - 为你的夏日带去清凉!
 date: 2024-10-07 09:51:11
-comments: true
+comments: false
 aside: false
 top_img: false
 ---

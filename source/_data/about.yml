@@ -83,8 +83,3 @@
       - name: "暂无追番"
         href: "#"
         cover: "https://bu.dusays.com/2023/05/01/644f4b037b930.jpg"
-  music:
-    music_tips: 音乐
-    music_title: 音乐偏好
-    music_link: /music
-    music_bg: https://bu.dusays.com/2023/05/01/644f4b037b930.jpg

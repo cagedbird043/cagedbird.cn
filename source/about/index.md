@@ -4,7 +4,7 @@ date: 2024-10-06 00:09:30
 aside: false
 top_img: false
 background: "#f8f9fe"
-comments: true
+comments: false
 type: "about"
 ---
 
@@ -16,7 +16,7 @@ type: "about"
 
 平时我会用 **CagedBird** / **Mice** 这些名字在网上活动。现在在 **Northeast Agricultural University** 读书，平时主要关注系统、编程、Android，以及一些真正能帮到自己的小工具和工作流。
 
-这个博客主要用来记录折腾过程、技术笔记，还有一些阶段性的想法。很多东西最开始只是为了把眼前的问题解决掉，后来整理整理，就慢慢变成了文章。
+笼中鸟技术笔记是我的个人非经营性技术博客，主要记录系统工程、Linux、Android、开源工具与个人学习实践。很多东西最开始只是为了把眼前的问题解决掉，后来整理整理，就慢慢变成了文章。
 
 ### 关于我
 

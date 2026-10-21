@@ -16,7 +16,6 @@
     "hexo": "^8.1.2",
     "hexo-asset-image": "^1.0.0",
     "hexo-auto-category": "^0.2.2",
-    "hexo-butterfly-envelope": "^1.0.15",
     "hexo-clean-css": "^2.0.0",
     "hexo-cli": "^4.3.2",
     "hexo-deployer-git": "^4.0.0",

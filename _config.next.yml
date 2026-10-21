@@ -14,7 +14,6 @@ cache:
 custom_file_path:
   # 开启自定义样式文件 (如果你之前有写 source/_data/styles.styl)
   style: source/_data/styles.styl
-  postBodyEnd: source/_data/giscus.njk
 
 # ---------------------------------------------------------------
 # Scheme Settings
@@ -79,7 +78,11 @@ toc:
 # ---------------------------------------------------------------
 # Footer Settings
 # ---------------------------------------------------------------
-# 你的旧配置里没有 footer 相关的修改，这里不写入，使用主题默认。
+# 获得真实 ICP 备案号后，填写 icp 并将 enable 设为 true。
+footer:
+  beian:
+    enable: false
+    icp: ""
 
 # ---------------------------------------------------------------
 # Post Settings
@@ -179,15 +182,6 @@ comments:
   storage: false
   lazyload: false
 
-gitalk:
-  enable: false
-  github_id: cagedbird043
-  repo: cagedbird.cn
-  client_id: Ov23liy7tMJ5tyB8eucY
-  client_secret: ""
-  admin_user: cagedbird043
-  distraction_free_mode: true
-  language: zh-CN
 
 # ---------------------------------------------------------------
 # Statistics and Analytics
