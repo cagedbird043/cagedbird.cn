@@ -5,7 +5,7 @@ tags:
   - Steam
   - Unity
   - 字体
-  - fontconfig
+  - Fontconfig
   - 游戏排障
 categories:
   - - 技术实践
