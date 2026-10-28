@@ -7,6 +7,10 @@ on:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  # Hexo 生成文章链接里的日期（permalink 的 :year/:month/:day）时用的是构建机器的系统时区，
+  # 不看 _config.yml 的 timezone。Runner 默认是 UTC，北京时间 0–8 点发的文章链接日期会早一天，
+  # 和页面上显示的发布日期对不上，所以这里固定成和 _config.yml 一致的时区。
+  TZ: Asia/Shanghai
 
 permissions:
   contents: read

@@ -83,7 +83,9 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
-updated_option: "mtime"
+# 用 date 而不是 mtime：CI checkout 会把所有文件的修改时间重置为构建时刻，用 mtime 时每篇文章的“修改时间”都会变成最近一次部署的时间。
+# 现在没写 updated 的文章，修改时间等于发布时间；真正更新了内容的文章，在 front-matter 里手写 updated: YYYY-MM-DD HH:mm:ss。
+updated_option: "date"
 
 # Pagination
 ## Set per_page to 0 to disable pagination
