@@ -78,12 +78,15 @@ toc:
 # ---------------------------------------------------------------
 # Footer Settings
 # ---------------------------------------------------------------
-# ICP 备案号显示在页脚，并链接到 beian.miit.gov.cn。
-# 公安备案通过后，在这里补上 gongan_id、gongan_num 和 gongan_icon_url。
+# 页脚备案信息：ICP 链接到 beian.miit.gov.cn，公安备案链接到 beian.mps.gov.cn。
+# gongan_id 是公安备案号中的数字部分，用于生成查询链接；图标直接引用公安备案网站的官方警徽。
 footer:
   beian:
     enable: true
     icp: 黑ICP备2026013433号-1
+    gongan_id: 23100002000296
+    gongan_num: 黑公网安备23100002000296号
+    gongan_icon_url: https://beian.mps.gov.cn/web/assets/logo01.6189a29f.png
 
 # ---------------------------------------------------------------
 # Post Settings
